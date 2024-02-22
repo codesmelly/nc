@@ -322,7 +322,12 @@
     }
 
     function CheckMobile() {
-        myGameInstance.SendMessage('VkBridge', 'CheckMobileResult', mobile);
+        if (mobile) {
+            myGameInstance.SendMessage('VkBridge', 'CheckMobileResult', 'true');
+        }
+        else {
+            myGameInstance.SendMessage('VkBridge', 'CheckMobileResult', 'false');
+        }
     }
     
 </script>
